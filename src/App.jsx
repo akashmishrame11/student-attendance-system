@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import {
@@ -16,8 +17,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/Forget" element={<Forget/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/forget" element={<Forget />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
