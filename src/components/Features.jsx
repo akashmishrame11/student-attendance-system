@@ -1,107 +1,56 @@
-import React from "react";
-
+import React from 'react';
 import {
-  Users,
-  ClipboardCheck,
-  ChartNoAxesCombined,
-  CalendarDays,
-  BellRing,
-  Search,
-  ArrowUpRight
-} from "lucide-react";
+  FaUserGraduate,
+  FaChalkboardTeacher,
+  FaCalendarCheck,
+} from 'react-icons/fa';
+const FeaturesData = [
+{
+  icon: <FaUserGraduate />,
+  id: 1,
+  title:'student management',
+  description: 'Easily manage student records and attendance with our intuitive system.',
+},
+{
+  icon: <FaCalendarCheck/>,
+  id: 2,
+  title:'attendance tracking',
+  description: 'Track attendance in real-time and generate reports effortlessly.',
+},
+{
+  icon: <FaChalkboardTeacher/>,
+  id: 3,
+  title:'teacher management',
+  description:'Efficiently manage teacher profiles and their attendance records.',
+}
+];
 
-const Features = () => {
-
-  const features = [
-    {
-      icon: Users,
-      title: "Student Management",
-      description:
-        "Easily manage student profiles, academic details and enrollment records."
-    },
-    {
-      icon: ClipboardCheck,
-      title: "Smart Attendance",
-      description:
-        "Mark daily attendance quickly and maintain accurate attendance records."
-    },
-    {
-      icon: ChartNoAxesCombined,
-      title: "Reports & Analytics",
-      description:
-        "Analyze attendance trends and generate detailed academic reports."
-    },
-    {
-      icon: CalendarDays,
-      title: "Class Management",
-      description:
-        "Organize classes, subjects and student groups in one place."
-    },
-    {
-      icon: BellRing,
-      title: "Attendance Alerts",
-      description:
-        "Identify students with low attendance and monitor their progress."
-    },
-    {
-      icon: Search,
-      title: "Quick Search",
-      description:
-        "Find student information and attendance records in seconds."
-    }
-  ];
-
+function Features() {
   return (
     <section className="features-section" id="features">
 
-      <div className="features-heading">
-        <span>OUR FEATURES</span>
-
-        <h2>
-          Everything You Need,
-          <strong> In One Place.</strong>
-        </h2>
-
-        <p>
-          Powerful tools designed to simplify attendance
-          management and improve academic efficiency.
-        </p>
-      </div>
+      <h2>Our Features</h2>
 
       <div className="features-container">
 
-        {features.map((feature, index) => {
+        {FeaturesData.map((feature) => (
+          <div className="feature-card" key={feature.id}>
 
-          const Icon = feature.icon;
-
-          return (
-            <div className="feature-card" key={index}>
-
-              <div className="feature-card-top">
-
-                <div className="feature-card-icon">
-                  <Icon size={26} strokeWidth={1.8} />
-                </div>
-
-                <ArrowUpRight
-                  size={20}
-                  className="feature-arrow"
-                />
-
-              </div>
-
-              <h3>{feature.title}</h3>
-
-              <p>{feature.description}</p>
-
+            <div className="feature-card-icon">
+              {feature.icon}
             </div>
-          );
-        })}
+
+            <h3>{feature.title}</h3>
+
+            <p>{feature.description}</p>
+
+          </div>
+        ))}
 
       </div>
 
     </section>
   );
-};
+}
 
 export default Features;

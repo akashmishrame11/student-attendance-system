@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,36 +18,65 @@ const Navbar = () => {
     };
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
+
       <nav className="premium-navbar">
 
+        {/* BRAND LOGO */}
         <a href="#home" className="brand" onClick={closeMenu}>
           <div className="brand-icon">🎓</div>
 
           <div className="brand-text">
-            <h2>Attendify<span></span></h2>
+            <h2>Attendify</h2>
             <small>CAMPUS MANAGEMENT</small>
           </div>
         </a>
 
-        <ul className={`premium-links ${menuOpen ? "show" : ""}`}>
+        {/* NAVIGATION LINKS */}
+        <ul
+          id="premium-menu"
+          className={`premium-links ${menuOpen ? "show" : ""}`}
+        >
           <li>
             <a href="#home" className="nav-active" onClick={closeMenu}>
               Home
             </a>
           </li>
-          <li><a href="#about" onClick={closeMenu}>About Us</a></li>
-          <li><a href="#features" onClick={closeMenu}>Features</a></li>
-          <li><a href="#attendance" onClick={closeMenu}>Attendance</a></li>
+
+          <li>
+            <a href="#about" onClick={closeMenu}>
+              About Us
+            </a>
+          </li>
+
+          <li>
+            <a href="#features" onClick={closeMenu}>
+              Features
+            </a>
+          </li>
+
+          <li>
+            <Link to="/login" onClick={closeMenu}>
+              Attendance
+            </Link>
+          </li>
         </ul>
 
+        {/* ACTION BUTTONS */}
         <div className="premium-actions">
-          <a href="/login" className="premium-login">
+
+          <Link
+            to="/login"
+            className="premium-login"
+            onClick={closeMenu}
+          >
             Admin Login <span>↗</span>
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -57,6 +88,7 @@ const Navbar = () => {
           >
             {menuOpen ? "✕" : "☰"}
           </button>
+
         </div>
 
       </nav>

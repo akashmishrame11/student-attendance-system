@@ -1,16 +1,27 @@
-import Home from "./pages/Home";
-import {
-  BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
 
-  import Home from "./pages/Home";
-  import Login from "./pages/Login";
-  import Dashboard from "./pages/Dashboard";
-  import Attendance from "./pages/Attendance";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Forget from "./pages/forget";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-  
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/Forget" element={<Forget/>}/>
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
