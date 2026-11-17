@@ -73,16 +73,14 @@ function Login() {
               and generate reports in one place.
             </p>
           </div>
-
-          <div className="login-security">
-            <FaShieldAlt />
-            <span>Secure Admin Portal</span>
-          </div>
+<div className="login-security">
+  <FaShieldAlt />
+  <span>Secure Admin Portal</span>
+</div>
 
         </div>
 
 
-        {/* RIGHT LOGIN PANEL */}
 
         <div className="login-right">
 
