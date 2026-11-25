@@ -26,3 +26,9 @@ node_modules/
 dist/
 .env
 .env.local
+
+# Project
+dist.zip
+*.zip
+backend/src/uploads/*
+!backend/src/uploads/.gitkeep

@@ -1,26 +1,21 @@
 {
-  "name": "student-attendance-system",
+  "name": "attendify-college-erp",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "description": "College Student Management System (College ERP) — React + Node/Express + MongoDB",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "lucide-react": "^1.54.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-icons": "^5.7.0",
-    "react-router-dom": "^7.18.4"
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "seed": "npm --prefix backend run seed",
+    "dev": "concurrently -k -n api,web -c blue,green \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "dev:api": "npm --prefix backend run dev",
+    "dev:web": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
+    "lint": "npm --prefix frontend run lint",
+    "test:api": "npm --prefix backend run test:api",
+    "test:features": "npm --prefix backend run test:features"
   },
   "devDependencies": {
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
-    "@vitejs/plugin-react": "^6.1.1",
-    "oxlint": "^1.81.0",
-    "vite": "^8.3.0"
+    "concurrently": "^9.2.1"
   }
 }
