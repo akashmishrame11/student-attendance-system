@@ -34,6 +34,20 @@ Open **http://localhost:5173** and sign in with a demo account (section 4).
 
 Run the parts separately with `npm run dev:api` and `npm run dev:web`.
 
+### Using the shared Atlas database (team members)
+
+The project's shared MongoDB Atlas database already contains the data, so skip step 3:
+
+```bash
+copy backend\.env.atlas.example backend\.env     # macOS/Linux: cp backend/.env.atlas.example backend/.env
+#  → replace <password> in MONGO_URI with the Atlas password from the project owner
+#  → set a long random JWT_SECRET
+npm run dev                                       # do NOT run "npm run seed": it wipes the shared data
+```
+
+If the connection fails, ask the owner to allow your IP in Atlas → Network Access.
+The password is never committed; `backend/.env` is git-ignored.
+
 ---
 
 ## 2. Database setup
