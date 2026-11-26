@@ -6,7 +6,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node --watch src/server.js",
+    "dev": "nodemon src/server.js",
     "seed": "node src/seed/seed.js",
     "test:api": "node tests/api.smoke.mjs",
     "test:features": "node tests/features.test.mjs",
@@ -34,6 +34,12 @@
   },
   "description": "College ERP REST API (Express + MongoDB)",
   "overrides": {
-    "uuid": "^11.1.1"
+    "uuid": "^11.1.1",
+    "nodemon": {
+      "minimatch": "^11.0.1"
+    }
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
